@@ -1,3 +1,6 @@
 .gradle
 .idea
+HELP.md
+build/
+out/
 application-oauth.properties
