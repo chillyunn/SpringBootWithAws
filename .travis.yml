@@ -34,7 +34,7 @@ deploy:
   -provider: codedeploy
   access_key_id: $AWS_ACCESS_KEY
   secret_key_id: $AWS_SECRET_KEY
-  bucket: springBootWithAws
+  bucket: giyun-springboot-build
   key: springBootWithAws.zip
   bundle_type: zip
   application: springboot
