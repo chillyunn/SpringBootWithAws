@@ -17,9 +17,9 @@ script: "./gradlew clean build"
 before_install:
   - chmod +x gradlew
 before_deploy:
-  - zip -r springboot *
+  - zip -r SpringBootWithAws *
   - mkdir -p deploy
-  - mv springboot.zip deploy/springboot.zip
+  - mv SpringBootWithAws.zip deploy/SpringBootWithAws.zip
 deploy:
   -provider: s3
   access_key_id: $AWS_ACCESS_KEY
