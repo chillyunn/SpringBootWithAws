@@ -21,26 +21,26 @@ before_deploy:
   - mkdir -p deploy
   - mv SpringBootWithAws.zip deploy/SpringBootWithAws.zip
 deploy:
-  -provider: s3
-  access_key_id: $AWS_ACCESS_KEY
-  secret_access_key: $AWS_SECRET_KEY
-  bucket: giyun-springboot-build
-  region: ap-northeast-2
-  skip_cleanup: true
-  acl: private
-  local_dir: deploy
-  wait-until-deployed: true
+  - provider: s3
+    access_key_id: $AWS_ACCESS_KEY
+    secret_access_key: $AWS_SECRET_KEY
+    bucket: giyun-springboot-build
+    region: ap-northeast-2
+    skip_cleanup: true
+    acl: private
+    local_dir: deploy
+    wait-until-deployed: true
 
-  -provider: codedeploy
-  access_key_id: $AWS_ACCESS_KEY
-  secret_key_id: $AWS_SECRET_KEY
-  bucket: giyun-springboot-build
-  key: SpringBootWithAws.zip
-  bundle_type: zip
-  application: springboot
-  deployment_group : springboot-group
-  region: ap-northeast-2
-  wait-until-deployed: true
+  - provider: codedeploy
+    access_key_id: $AWS_ACCESS_KEY
+    secret_key_id: $AWS_SECRET_KEY
+    bucket: giyun-springboot-build
+    key: SpringBootWithAws.zip
+    bundle_type: zip
+    application: springboot
+    deployment_group: springboot-group
+    region: ap-northeast-2
+    wait-until-deployed: true
 
 # CI 실행 완료 시 메일로 알람
 notifications:
