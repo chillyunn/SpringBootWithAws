@@ -1,7 +1,7 @@
 #!/bin/bash
 
 REPOSITORY=/home/ec2-user/app/step2
-PROJECT_NAME=springboot
+PROJECT_NAME=SpringBootWithAws
 
 echo "> Build 파일 복사"
 
