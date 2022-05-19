@@ -1,12 +1,14 @@
 package com.giyun.book.springboot.web;
 
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.springframework.mock.env.MockEnvironment;
 import org.springframework.security.core.parameters.P;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.assertj.core.api.Assertions.assertThat;
-
-class ProfileControllerUnitTest {
+@RunWith(SpringRunner.class)
+public class ProfileControllerUnitTest {
 
     @Test
     public void real_profile이_조회된다(){
@@ -26,7 +28,7 @@ class ProfileControllerUnitTest {
         assertThat(profile).isEqualTo(expectedProfile);
     }
     @Test
-    void real_profile이_없으면_첫번째가_조회된다(){
+    public void real_profile이_없으면_첫번째가_조회된다(){
         //given
         String expectedProfile = "oauth";
         MockEnvironment env = new MockEnvironment();
@@ -44,7 +46,7 @@ class ProfileControllerUnitTest {
     }
 
     @Test
-    void active_profile이_없으면_default가_조회된다(){
+    public void active_profile이_없으면_default가_조회된다(){
         //given
         String expectedProfile = "default";
         MockEnvironment env =new MockEnvironment();
